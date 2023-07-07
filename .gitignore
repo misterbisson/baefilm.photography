@@ -1,5 +1,17 @@
-# Object file
-*.o
+node_modules
 
-# Ada Library Information
-*.ali
+# Hugo-generated items
+public
+resources
+.hugo_build.lock
+
+# Local Netlify folder
+.netlify
+
+TODO
+
+# MacOS
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store

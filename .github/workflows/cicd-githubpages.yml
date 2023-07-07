@@ -1,0 +1,31 @@
+name: CI/CD - Github Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out project
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16.x
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build website
+      run: npm run build
+
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@4.1.7
+      with:
+        branch: staticsite
+        folder: ./public
